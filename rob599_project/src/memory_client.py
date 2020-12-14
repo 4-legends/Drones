@@ -10,7 +10,7 @@ class Memory_Client:
 
 	def main(self):
 		req = memorize_positionRequest()
-		req.name = input('Enter Location name: ')
+		req.name = first#input('Enter Location name: ')
 		resp = self.memory_client(req)
 		print(resp)
 		

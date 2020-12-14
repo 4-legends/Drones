@@ -27,7 +27,7 @@ class control_robot_client:
 
 
 	def main(self):
-		goal_name = input('Enter goal position: ')
+		goal_name = 'second'#input('Enter goal position: ')
 		
 		self.client.wait_for_server()
 

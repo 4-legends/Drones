@@ -16,7 +16,7 @@ class Robot_controller:
     def __init__(self):
         self.known_location = {}
         self.heading = PoseStamped()
-        self.z_height = 0.5
+        self.z_height = 1.0
         rospy.Service('memorize_position', memorize_position, self.memorize_position_func)
         rospy.Service('take_off', take_off, self.take_off_func)
         rospy.Service('z_height', z_height, self.height_func)
@@ -33,6 +33,10 @@ class Robot_controller:
         self.moving_marker_pub = rospy.Publisher('/moving_marker',Marker, queue_size=1)
         self.pose_sub = rospy.Subscriber('/ground_truth_to_tf/pose', PoseStamped, self.pose_callback)
         self.marker_loc = PoseStamped()
+        self.marker_loc.header.frame_id = "world"
+        self.marker_loc.pose.position.x = 1
+        self.marker_loc.pose.position.y = 2
+        self.marker_loc.pose.position.z = 0.5
         rospy.sleep(1)
         fixed_marker = Marker()
         fixed_marker.action = Marker.ADD
