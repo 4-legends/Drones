@@ -1,0 +1,6 @@
+
+float64 height #Z-height of robot between 0 and 2
+
+---
+
+bool Status #Execution Status

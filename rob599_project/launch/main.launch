@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+   <include file="$(find hector_quadrotor_gazebo)/launch/quadrotor_empty_world.launch"/>
+   <include file="$(find rob599_project)/launch/quadrotor.launch.xml"/>
+   <include file="$(find rob599_project)/launch/quadrotor_localization.launch.xml"/>
+</launch>
